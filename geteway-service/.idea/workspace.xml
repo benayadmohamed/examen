@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de5564b-e76f-418f-b2b2-5fc624f58983" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../security-service/src/main/java/com/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../security-service/src/main/java/com/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
