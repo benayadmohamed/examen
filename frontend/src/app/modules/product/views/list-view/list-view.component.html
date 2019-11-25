@@ -1,0 +1,74 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Products</h1>
+  <!--  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+      class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+    <h6 class="m-0 font-weight-bold text-primary">Liste</h6>
+    <div class="input-group col-md-3">
+      <input #searchv type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+             aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button (click)="search(searchv.value)" class="btn btn-primary" type="button">
+          <i class="fas fa-search fa-sm"></i>
+        </button>
+      </div>
+    </div>
+    <a routerLink="add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"> Ajouter Product</a>
+
+  </div>
+  <div class="card-body">
+
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let v of (products$|async)">
+          <td>{{v.id}}</td>
+          <td>{{v.name}}</td>
+          <td>{{v.price}}</td>
+          <td>{{v.category}}</td>
+          <td>
+            <a (click)="delete(v._links.self.href)" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
+              delete</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <button *ngIf="(links$|async).prev" (click)="prev()" class="page-link" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </button>
+          </li>
+          <li *ngFor="let item of arrayOne((pages$|async).totalPages); let i = index;" class="page-item">
+            <a class="page-link"
+               (click)="chnageParams('page',i)">{{i + 1}}</a>
+          </li>
+          <li class="page-item">
+            <button *ngIf="(links$|async).next"
+                    (click)=next() class="page-link"
+                    aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

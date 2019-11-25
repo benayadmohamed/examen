@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 //@CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.DELETE})
-@RepositoryRestResource
+@RepositoryRestResource(path = "clients")
 public interface ClientRepository extends MongoRepository<Client, String> {
 //    /people/search/nameStartsWith?name=
 //    @RestResource(path = "nameStartsWith", rel = "nameStartsWith")
