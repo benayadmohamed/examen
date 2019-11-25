@@ -1,3 +1,4 @@
+/*
 package com.configs.soap;
 
 import com.entities.Client;
@@ -26,3 +27,4 @@ public class ClientEndpoint {
         return response;
     }
 }
+*/
