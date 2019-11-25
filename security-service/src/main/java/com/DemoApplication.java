@@ -1,10 +1,29 @@
 package com;
 
+import com.configs.security.MyBCryptPasswordEncoder;
+import com.models.Privilege;
+import com.models.Role;
+import com.models.User;
+import com.repositories.PrivilageRepository;
+import com.repositories.RoleRepository;
+import com.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+
 @SpringBootApplication
-public class DemoApplication {
+public class DemoApplication implements CommandLineRunner {
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    private RoleRepository roleRepository;
+    @Autowired
+    private PrivilageRepository privilageRepository;
+    @Autowired
+    private MyBCryptPasswordEncoder myBCryptPasswordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -16,36 +35,57 @@ public class DemoApplication {
         privilageRepository.deleteAll();
         userRepository.deleteAll();
 
-        Privilege EDIT_PROFILE = privilageRepository.save(new Privilege("EDIT_PROFILE"));
-        Privilege READ_PROFILE = privilageRepository.save(new Privilege("READ_PROFILE"));
-        Privilege DELETE_PROFILE = privilageRepository.save(new Privilege("DELETE_PROFILE"));
+        Privilege EDIT_CLIENT = privilageRepository.save(new Privilege("EDIT_CLIENT"));
+        Privilege READ_CLIENT = privilageRepository.save(new Privilege("READ_CLIENT"));
+        Privilege DELETE_CLIENT = privilageRepository.save(new Privilege("DELETE_CLIENT"));
 
-        Privilege EDIT_USE = privilageRepository.save(new Privilege("EDIT_USE"));
-        Privilege READ_USE = privilageRepository.save(new Privilege("READ_USE"));
-        Privilege DELETE_USE = privilageRepository.save(new Privilege("DELETE_USE"));
+        Privilege EDIT_ANALYSE = privilageRepository.save(new Privilege("EDIT_ANALYSE"));
+        Privilege READ_ANALYSE = privilageRepository.save(new Privilege("READ_ANALYSE"));
+        Privilege DELETE_ANALYSE = privilageRepository.save(new Privilege("DELETE_ANALYSE"));
 
+        Privilege EDIT_USER = privilageRepository.save(new Privilege("EDIT_USER"));
+        Privilege READ_USER = privilageRepository.save(new Privilege("READ_USER"));
+        Privilege DELETE_USER = privilageRepository.save(new Privilege("DELETE_USER"));
+
+        Role ROLE_ANALYSE_MANAGER = roleRepository.save(new Role("ROLE_ANALYSE_MANAGER",
+                Arrays.asList(
+                        EDIT_ANALYSE,
+                        READ_ANALYSE,
+                        DELETE_ANALYSE,
+                        EDIT_CLIENT,
+                        READ_CLIENT,
+                        DELETE_CLIENT
+                )));
         Role ROLE_ADMIN = roleRepository.save(new Role("ROLE_ADMIN",
                 Arrays.asList(
-                        EDIT_PROFILE,
-                        READ_PROFILE,
-                        DELETE_PROFILE,
-                        EDIT_USE,
-                        READ_USE,
-                        DELETE_USE
+                        EDIT_ANALYSE,
+                        READ_ANALYSE,
+                        DELETE_ANALYSE,
+                        EDIT_CLIENT,
+                        READ_CLIENT,
+                        DELETE_CLIENT,
+                        EDIT_USER,
+                        READ_USER,
+                        DELETE_USER
                 )));
         Role ROLE_USER = roleRepository.save(new Role("ROLE_USER", Arrays.asList(
-                READ_PROFILE,
-                READ_USE
+                READ_ANALYSE,
+                READ_CLIENT
         )));
         userRepository.save(new User(
                 "admin",
                 myBCryptPasswordEncoder.encode("0000"),
-                Arrays.asList(ROLE_ADMIN, ROLE_USER)
+                Arrays.asList(ROLE_ADMIN)
         ));
         userRepository.save(new User(
                 "user",
                 myBCryptPasswordEncoder.encode("0000"),
                 Arrays.asList(ROLE_USER)
+        ));
+        userRepository.save(new User(
+                "manager",
+                myBCryptPasswordEncoder.encode("0000"),
+                Arrays.asList(ROLE_ANALYSE_MANAGER)
         ));
 
     }
