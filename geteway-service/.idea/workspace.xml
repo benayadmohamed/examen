@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de5564b-e76f-418f-b2b2-5fc624f58983" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../analyse-service/src/main/java/com/configs/security/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../analyse-service/src/main/java/com/configs/security/WebSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../analyse-service/src/main/java/com/dao/AnalyseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../analyse-service/src/main/java/com/dao/AnalyseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analyse-service/src/main/java/com/dao/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../analyse-service/src/main/java/com/dao/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -177,12 +174,12 @@
       <workItem from="1570220571831" duration="912000" />
       <workItem from="1570372720781" duration="782000" />
       <workItem from="1570471166373" duration="1673000" />
-      <workItem from="1574692406037" duration="1363000" />
+      <workItem from="1574692406037" duration="1976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18828000" />
+    <option name="totallyTimeSpent" value="19441000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1058" extended-state="6" />
@@ -196,7 +193,7 @@
       <window_info id="Learn" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5321839" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40344828" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
