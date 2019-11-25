@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de5564b-e76f-418f-b2b2-5fc624f58983" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../analyse-service/src/main/java/com/configs/soap/CountryEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../analyse-service/src/main/java/com/services/ClientSoapRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../analyse-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../analyse-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analyse-service/src/main/java/com/dao/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../analyse-service/src/main/java/com/dao/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
